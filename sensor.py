@@ -40,7 +40,10 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
         # initializing I2C bus using the auto-detected pins
         i2c = busio.I2C(board.SCL, board.SDA)
         # initializing the sensor
-        si7021 = adafruit_si7021.SI7021(i2c, address=config[CONF_I2C_ADDRESS])
+        if config[CONF_I2C_ADDRESS] == None:
+            si7021 = adafruit_si7021.SI7021(i2c)
+        else:
+            si7021 = adafruit_si7021.SI7021(i2c, address=config[CONF_I2C_ADDRESS])
     except ValueError as error:
         # this usually happens when the board is I2C capable, but the device can't be found at the configured address
         if str(error.args[0]).startswith("No I2C device at address"):
