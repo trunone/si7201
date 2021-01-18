@@ -1,0 +1,11 @@
+{
+  "domain": "si7021",
+  "name": "Si7021",
+  "documentation": "",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": [
+    "RPi.GPIO",
+    "adafruit-circuitpython-7021"
+  ]
+}
