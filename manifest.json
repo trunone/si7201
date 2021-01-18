@@ -6,6 +6,6 @@
   "codeowners": [],
   "requirements": [
     "RPi.GPIO",
-    "adafruit-circuitpython-7021"
+    "adafruit-circuitpython-si7021"
   ]
 }
